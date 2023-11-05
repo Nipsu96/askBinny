@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/askBinny/static/css/main.b78b7d2a.css",
-    "main.js": "/askBinny/static/js/main.f0d72c20.js",
+    "main.js": "/askBinny/static/js/main.fdd0f192.js",
     "static/js/787.ac148196.chunk.js": "/askBinny/static/js/787.ac148196.chunk.js",
     "static/media/placeholder.jpg": "/askBinny/static/media/placeholder.d6c6c07feaed3abffab3.jpg",
     "static/media/Ask_Binny_Logo.png": "/askBinny/static/media/Ask_Binny_Logo.c88ef59cb151a7c89b40.png",
@@ -9,11 +9,11 @@
     "static/media/mapicon.png": "/askBinny/static/media/mapicon.6ec37c494989c00d95fe.png",
     "index.html": "/askBinny/index.html",
     "main.b78b7d2a.css.map": "/askBinny/static/css/main.b78b7d2a.css.map",
-    "main.f0d72c20.js.map": "/askBinny/static/js/main.f0d72c20.js.map",
+    "main.fdd0f192.js.map": "/askBinny/static/js/main.fdd0f192.js.map",
     "787.ac148196.chunk.js.map": "/askBinny/static/js/787.ac148196.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b78b7d2a.css",
-    "static/js/main.f0d72c20.js"
+    "static/js/main.fdd0f192.js"
   ]
 }
