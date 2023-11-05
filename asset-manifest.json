@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/askBinny/static/css/main.ec7fff61.css",
+    "main.css": "/askBinny/static/css/main.f3eef0d4.css",
     "main.js": "/askBinny/static/js/main.bee6d864.js",
     "static/js/787.ac148196.chunk.js": "/askBinny/static/js/787.ac148196.chunk.js",
     "static/media/placeholder.jpg": "/askBinny/static/media/placeholder.d6c6c07feaed3abffab3.jpg",
@@ -9,12 +9,12 @@
     "static/media/mapicon.png": "/askBinny/static/media/mapicon.6ec37c494989c00d95fe.png",
     "static/media/tuni-logo-valkea.png": "/askBinny/static/media/tuni-logo-valkea.743fb5b5d6c211f4b5fe.png",
     "index.html": "/askBinny/index.html",
-    "main.ec7fff61.css.map": "/askBinny/static/css/main.ec7fff61.css.map",
+    "main.f3eef0d4.css.map": "/askBinny/static/css/main.f3eef0d4.css.map",
     "main.bee6d864.js.map": "/askBinny/static/js/main.bee6d864.js.map",
     "787.ac148196.chunk.js.map": "/askBinny/static/js/787.ac148196.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec7fff61.css",
+    "static/css/main.f3eef0d4.css",
     "static/js/main.bee6d864.js"
   ]
 }
