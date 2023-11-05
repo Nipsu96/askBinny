@@ -68,7 +68,7 @@ function App() {
     return <header className="App-header">
       <ul className={click ? "nav-options active" : "nav-options"}>
         <li className="option" onClick={closeMobileMenu}>
-          <Link to="/ask-binny-app">FrontPage</Link>
+          <Link to="/">FrontPage</Link>
         </li>
         {/* <li className="option" onClick={closeMobileMenu}>
           <Link to="/IdentifyWaste">Identify my waste</Link>
@@ -115,7 +115,7 @@ function App() {
           </Route>
           <Route path="/map" element={<Map />} >
           </Route>
-          <Route path="/ask-binny-app" element={<Home />} >
+          <Route path="/" element={<Home />} >
           </Route>
         </Routes >
 

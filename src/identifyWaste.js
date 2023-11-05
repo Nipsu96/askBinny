@@ -31,7 +31,7 @@ function IdentifyWaste() {
             <Link to="/map">
             <button className='Yes-button'>Yes &#9989;</button>
             </Link>
-            <Link to="/ask-binny-app">
+            <Link to="/">
                 <button className='No-button'>No &#10060;</button>
             </Link>
             <div className='footer'>Available in TAMK C-building</div>
