@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/askBinny/static/css/main.fda419a5.css",
+    "main.js": "/askBinny/static/js/main.eedc1a7e.js",
+    "static/js/787.ac148196.chunk.js": "/askBinny/static/js/787.ac148196.chunk.js",
+    "static/media/placeholder.jpg": "/askBinny/static/media/placeholder.d6c6c07feaed3abffab3.jpg",
+    "static/media/Ask_Binny_Logo.png": "/askBinny/static/media/Ask_Binny_Logo.c88ef59cb151a7c89b40.png",
+    "static/media/binnyVersion1.png": "/askBinny/static/media/binnyVersion1.cf30086cd1b1223a5a9f.png",
+    "static/media/mapicon.png": "/askBinny/static/media/mapicon.6ec37c494989c00d95fe.png",
+    "index.html": "/askBinny/index.html",
+    "main.fda419a5.css.map": "/askBinny/static/css/main.fda419a5.css.map",
+    "main.eedc1a7e.js.map": "/askBinny/static/js/main.eedc1a7e.js.map",
+    "787.ac148196.chunk.js.map": "/askBinny/static/js/787.ac148196.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fda419a5.css",
+    "static/js/main.eedc1a7e.js"
+  ]
+}
