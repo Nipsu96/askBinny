@@ -40,6 +40,70 @@ img{
   max-height: 57vh;
   overflow-y: scroll;
 }
+.IdentifyWasteImage{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  height:22vh;
+}
+
+.identifyWaste-binny{
+  height: 20vh;
+  position: absolute;
+  left: 139px;
+  bottom: 50px;
+}
+
+.circular-sb-identify{
+  width: 333px;
+  background-color: #fff;
+  border: 5px solid black;
+  padding: 43px 0px;
+  margin: 30px auto;
+  border-radius: 20%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  font-family: arial;
+  position: absolute;
+  right: 32px;
+  bottom: 197px;
+}
+
+.binText{
+  color:red;
+  padding:0;
+  margin:0
+}
+
+.WasteTittle{
+  text-align: center;
+}
+
+.wasteButton {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+}
+
+.Yes-button{
+  position: absolute;
+  bottom: 83px;
+  right: 25px;
+  font-size: 24px;
+  padding: 9px;
+  background-color: #B67EFF;
+}
+.No-button{
+  position: absolute;
+  bottom: 83px;
+  left: 25px;
+  font-size: 24px;
+  padding: 9px;
+  background-color: #B67EFF;
+}
 
 .Map{
   float:right;
