@@ -1,25 +1,18 @@
 {
   "files": {
-    "main.css": "/askBinny/static/css/main.f3eef0d4.css",
-    "main.js": "/askBinny/static/js/main.f37d8427.js",
+    "main.css": "/askBinny/static/css/main.62579467.css",
+    "main.js": "/askBinny/static/js/main.29ece02a.js",
     "static/js/787.ac148196.chunk.js": "/askBinny/static/js/787.ac148196.chunk.js",
-    "static/media/placeholder.jpg": "/askBinny/static/media/placeholder.d6c6c07feaed3abffab3.jpg",
     "static/media/Ask_Binny_Logo.png": "/askBinny/static/media/Ask_Binny_Logo.c88ef59cb151a7c89b40.png",
     "static/media/binnyVersion1.png": "/askBinny/static/media/binnyVersion1.cf30086cd1b1223a5a9f.png",
-    "static/media/mapicon.png": "/askBinny/static/media/mapicon.6ec37c494989c00d95fe.png",
-    "static/media/compost.png": "/askBinny/static/media/compost.bbc0b3538e040eac47f8.png",
-    "static/media/candy.png": "/askBinny/static/media/candy.f0fb81e9413616f72e9d.png",
     "static/media/tuni-logo-valkea.png": "/askBinny/static/media/tuni-logo-valkea.743fb5b5d6c211f4b5fe.png",
-    "static/media/tissue-paper.png": "/askBinny/static/media/tissue-paper.bb5c9b4f1a7b0aa577a9.png",
-    "static/media/coffee.png": "/askBinny/static/media/coffee.f87050637b175920f209.png",
-    "static/media/paper.png": "/askBinny/static/media/paper.748b0add3e846c971565.png",
     "index.html": "/askBinny/index.html",
-    "main.f3eef0d4.css.map": "/askBinny/static/css/main.f3eef0d4.css.map",
-    "main.f37d8427.js.map": "/askBinny/static/js/main.f37d8427.js.map",
+    "main.62579467.css.map": "/askBinny/static/css/main.62579467.css.map",
+    "main.29ece02a.js.map": "/askBinny/static/js/main.29ece02a.js.map",
     "787.ac148196.chunk.js.map": "/askBinny/static/js/787.ac148196.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3eef0d4.css",
-    "static/js/main.f37d8427.js"
+    "static/css/main.62579467.css",
+    "static/js/main.29ece02a.js"
   ]
 }
