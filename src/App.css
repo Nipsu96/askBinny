@@ -1,83 +1,118 @@
-.header{
-  background-color: #d9d9d9;
-  padding:5px
+body {
+  box-sizing: border-box;
 }
-h4{
+
+.header {
+  background-color: #ffffff;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+h4 {
   text-align: center;
 }
 
-img{
-  height:15vh;
+img {
+  height: 15vh;
 }
 
-.mapIcon{
+/*.mapIcon {
   height: 5vh;
+}*/
+
+.App-header {
+  padding: 20px;
+  background-color: #4e008e;
 }
 
-.logo{
-  height:11vh;
+.logo {
+  height: 11vh;
+  margin-left: 20%;
 }
 
-.binny{
+/*
+.binny {
   height: 20vh;
   position: absolute;
   left: 29px;
   bottom: 36px;
-}
+}*/
 
-.content{
+.content {
   height: 100%;
-  padding-bottom:30px
+  /*padding-bottom: 30px;*/
 }
 
-.content .wastelisting{
+.content .wastelisting {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left:30px;
-  margin-right:auto;
+  margin-left: 60px;
+  margin-right: auto;
   align-items: center;
-  max-height: 57vh;
+  max-height: 58vh;
   overflow-y: scroll;
 }
-.IdentifyWasteImage{
+
+h3 {
+  margin-left: 5%;
+}
+
+.IdentifyWasteImage {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
-  height:22vh;
+  height: 22vh;
+  border-radius: 10px;
+  border: 4px solid #f5f7fe;
+  padding: 10px;
+  box-shadow: 2px 2px 5px lightsteelblue;
 }
 
-.identifyWaste-binny{
+.identifyWaste-binny {
   height: 20vh;
   position: absolute;
-  left: 139px;
+  left: 33%;
   bottom: 50px;
 }
 
-.circular-sb-identify{
+.circular-sb-identify {
   width: 333px;
-  background-color: #fff;
-  border: 5px solid black;
-  padding: 43px 0px;
+  height: 110px;
+  background-color: #f5f7fe;
+  border: 3px solid #e1e4ee;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin: 30px auto;
   border-radius: 20%;
   text-align: center;
-  font-size: 18px;
-  font-weight: 900;
+  font-weight: 700;
   font-family: arial;
   position: absolute;
-  right: 32px;
-  bottom: 197px;
+  left: 8%;
+  bottom: 22%;
 }
 
-.binText{
-  color:red;
-  padding:0;
-  margin:0
+.circular-sb-identify p {
+  display: inline;
 }
 
-.WasteTittle{
+.binText {
+  color: red;
+  padding: 0;
+  margin: 0;
+}
+
+.wasteImage {
+  border-radius: 10px;
+  border: 2px solid #f5f7fe;
+  box-shadow: 2px 2px 3px lightsteelblue;
+}
+
+.WasteTittle {
   text-align: center;
 }
 
@@ -86,39 +121,46 @@ img{
   cursor: pointer;
   appearance: none;
   background-color: inherit;
+  text-wrap: nowrap;
 }
 
-.Yes-button{
+.Yes-button {
   position: absolute;
-  bottom: 83px;
-  right: 25px;
+  bottom: 10%;
+  right: 6%;
   font-size: 24px;
-  padding: 9px;
-  background-color: #B67EFF;
+  padding: 10px;
+  background-color: #b67eff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px gray;
 }
-.No-button{
+.No-button {
   position: absolute;
-  bottom: 83px;
-  left: 25px;
+  bottom: 10%;
+  left: 6%;
   font-size: 24px;
-  padding: 9px;
-  background-color: #B67EFF;
+  padding: 10px;
+  background-color: #b67eff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px gray;
 }
 
-.Map{
-  float:right;
+.Map {
+  float: right;
   margin-right: 12vw;
   margin-top: 9vh;
 }
 
-.waste{
-  margin:5px;
+.waste {
+  margin: 5px;
   width: 40%;
   text-align: center;
 }
 
 /* Speech bubble */
-.circular-sb {
+/*.circular-sb {
   width: 199px;
   background-color: #fff;
   border: 5px solid black;
@@ -132,7 +174,6 @@ img{
   position: absolute;
   right: 31px;
   bottom: 115px;
-
 }
 
 .circle3 {
@@ -164,7 +205,7 @@ img{
   border-radius: 50%;
   left: 3px;
   bottom: -15px;
-}
+}*/
 
 /*
 Hamburger menu */
@@ -176,10 +217,9 @@ Hamburger menu */
 
 .active {
   background-color: #cce6ff;
-  border-radius: 10px;
   margin-right: 5px;
-
 }
+
 .nav-options {
   display: flex;
   flex-direction: column;
@@ -209,7 +249,7 @@ Hamburger menu */
   margin: 0px;
   padding: 1px;
   transition: all 0.5s ease;
-  background-color: #d9d9d9;
+  background-color: #4e008e;
 }
 
 .mobile-menu {
@@ -219,12 +259,26 @@ Hamburger menu */
 }
 
 .menu-icon {
+  color: #ffffff;
   position: absolute;
-  top: 46px;
-  right: 22px;
+  top: 110px;
+  left: 22px;
   z-index: 6;
   width: 45px;
   height: 45px;
+}
+
+a {
+  color: #ffffff;
+}
+
+.TuniLogo {
+  width: 80%;
+  height: auto;
+}
+
+.footer p {
+  margin-top: 10px;
 }
 
 .footer {
@@ -232,8 +286,8 @@ Hamburger menu */
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color:#d9d9d9;
-  color: black;
+  background-color: #4e008e;
+  color: rgb(255, 255, 255);
   text-align: center;
-  padding:0.5vh;
+  /* padding: 0.5vh; */
 }

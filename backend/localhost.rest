@@ -1,0 +1,5 @@
+### Get all
+GET http://localhost:5000/api/sortable
+
+### Get by search
+GET http://localhost:5000/api/sortable/filter?sortable.name=napkin

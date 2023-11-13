@@ -1,41 +1,107 @@
-import React, { useState } from 'react';
-import Placeholder from './img/placeholder.jpg'
-import Binny from './img/binnyVersion1.png'
-import {
-    Link
-  } from "react-router-dom";
-import './App.css';
+import React, { useState, useEffect } from "react";
+//import Placeholder from "./img/placeholder.jpg";
+import Binny from "./img/binnyVersion1.png";
+import { Link } from "react-router-dom";
+import "./App.css";
 
 function IdentifyWaste() {
+  // gets the waste name from the url and makes it into a string
+  var url = window.location.pathname;
+  let wasteUrlString = url.split("/").pop();
+  let wasteName = decodeURI(wasteUrlString);
+  const [wasteImage, setWasteImage] = useState([]);
+  const [binColor, setBinColor] = useState("");
+  const [binType, setBinType] = useState("");
 
-    // gets the waste name from the url and makes it into a string
-    var url = window.location.pathname;
-    let wasteUrlString = url.split('/').pop()
-    let wasteName = decodeURI(wasteUrlString)
+  useEffect(() => {
+    fetch(`https://waste-management-qlgq.onrender.com/api/sortable`)
+      .then((response) => response.json())
+      .then((data) => {
+        const wasteData = data.find((item) => item.name === wasteName);
+
+        if (wasteData && wasteData.image) {
+          const image = arrayBufferToBase64(wasteData.image.data);
+          setWasteImage(`data:image/png;base64,${image}`);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching waste image:", error);
+      });
+    fetch(`https://waste-management-qlgq.onrender.com/api/sortable/filter?sortable.name=${wasteName}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const wasteData = data.find((item) => item.name === wasteName);
+
+        if (wasteData) {
+          setBinColor(wasteData.bin_color);
+          setBinType(wasteData.type)
 
 
-    return (
-        <div className="App">
-            <h3 className="WasteTittle">{wasteName}</h3>
-            <img src={Placeholder} alt="Placeholder" className="IdentifyWasteImage" /><br />
+          switch (wasteData.bin_color) {
+            case "Black/Brown":
+              document.getElementById("binText").style.color= "brown"
+              break;
+            case "Green":
+              document.getElementById("binText").style.color= "green"
+              break;
+            case "Large green bin with green label":
+              document.getElementById("binText").style.color= "black"
+              break;
+            case "Large green bin with white label":
+              document.getElementById("binText").style.color= "orange"
+              break;
+            case "Red":
+              document.getElementById("binText").style.color= "red"
+              break;
+            case "Yellow":
+              document.getElementById("binText").style.color= "#e6b800"
+              break;
+            default:
+              document.getElementById("binText").style.color= "black"
+              break;
+          }
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching bin color:", error);
+      });
+  }, [wasteName]);
 
-            <div className="circular-sb-identify">
-                Is your waste some of these:
-                <li>Fruit peels</li>
-                <li>Spindle of the fruit</li>
-                <li> Rotten fruit or vegetable?</li>
-                <br />
-                It goes in the bio waste (<span className='binText'>red bin</span>). Let’s see where the bin is!
-            </div>
-            <img src={Binny} alt="trash can" className='identifyWaste-binny' />
-            <Link to="/map">
-            <button className='Yes-button'>Yes &#9989;</button>
-            </Link>
-            <Link to="/">
-                <button className='No-button'>No &#10060;</button>
-            </Link>
-            <div className='footer'>Available in TAMK C-building</div>
-        </div >
-    );
+  function arrayBufferToBase64(buffer) {
+    const binary = new Uint8Array(buffer);
+    let base64 = "";
+    binary.forEach((byte) => {
+      base64 += String.fromCharCode(byte);
+    });
+    return btoa(base64);
+  }
+  return (
+    <div className="App">
+      <div className="wasteInfo">
+        <h3 className="WasteTitle">{wasteName}</h3>
+        <img
+          src={wasteImage}
+          alt={`Waste example of ${wasteName}`}
+          className="IdentifyWasteImage"
+        />
+      </div>
+      <br />
+
+      <div className="circular-sb-identify">
+        <p>
+          It goes in the <span className="binType">{binType}</span> (<span id="binText">{binColor}</span>).
+          Let’s see where the bin is!
+        </p>
+      </div>
+      <img src={Binny} alt="trash can" className="identifyWaste-binny" />
+      <Link to="/map">
+        <button className="Yes-button">Yes &#9989;</button>
+      </Link>
+      <Link to="/askBinny">
+        <button className="No-button">No &#10060;</button>
+      </Link>
+      <div className="footer">Available in TAMK C-building</div>
+    </div>
+  );
 }
 export default IdentifyWaste;
