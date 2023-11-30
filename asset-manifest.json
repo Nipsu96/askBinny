@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/askBinny/static/css/main.61372c8c.css",
-    "main.js": "/askBinny/static/js/main.8094f931.js",
+    "main.css": "/askBinny/static/css/main.58ddb7e2.css",
+    "main.js": "/askBinny/static/js/main.d91b4c4e.js",
     "static/js/787.a57d840c.chunk.js": "/askBinny/static/js/787.a57d840c.chunk.js",
     "static/media/Ask_Binny_Logo.png": "/askBinny/static/media/Ask_Binny_Logo.c88ef59cb151a7c89b40.png",
     "static/media/binnyVersion1.png": "/askBinny/static/media/binnyVersion1.cf30086cd1b1223a5a9f.png",
@@ -13,12 +13,12 @@
     "static/media/Black_Binny.png": "/askBinny/static/media/Black_Binny.530ea54775c44a0bfd15.png",
     "static/media/tuni-logo-valkea.png": "/askBinny/static/media/tuni-logo-valkea.743fb5b5d6c211f4b5fe.png",
     "index.html": "/askBinny/index.html",
-    "main.61372c8c.css.map": "/askBinny/static/css/main.61372c8c.css.map",
-    "main.8094f931.js.map": "/askBinny/static/js/main.8094f931.js.map",
+    "main.58ddb7e2.css.map": "/askBinny/static/css/main.58ddb7e2.css.map",
+    "main.d91b4c4e.js.map": "/askBinny/static/js/main.d91b4c4e.js.map",
     "787.a57d840c.chunk.js.map": "/askBinny/static/js/787.a57d840c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.61372c8c.css",
-    "static/js/main.8094f931.js"
+    "static/css/main.58ddb7e2.css",
+    "static/js/main.d91b4c4e.js"
   ]
 }
