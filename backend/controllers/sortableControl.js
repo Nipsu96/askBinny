@@ -36,7 +36,32 @@ const getSortableBySearch = async (req, res) => {
   }
 };
 
+const getMapBySearch = async (req, res) => {
+  const searchColumn = Object.keys(req.query)[0];
+  try {
+    let search = " ";
+    if (searchColumn === "map.map_name") {
+      search = {
+        column: searchColumn,
+        value: req.query[searchColumn].toString(),
+      };
+    } else {
+      search = {
+        column: searchColumn,
+        value: req.query[searchColumn].toString(),
+      };
+    }
+    const response = await sortable.findMap(search);
+    if (response) {
+      res.send(response);
+    }
+  } catch (e) {
+    res.sendStatus(500);
+  }
+};
+
 module.exports = {
   getSortables,
   getSortableBySearch,
+  getMapBySearch,
 };

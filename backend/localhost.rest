@@ -3,3 +3,6 @@ GET http://localhost:5000/api/sortable
 
 ### Get by search
 GET http://localhost:5000/api/sortable/filter?sortable.name=napkin
+
+### Get map by search
+GET http://localhost:5000/api/sortable/map?map.map_name=C1_all

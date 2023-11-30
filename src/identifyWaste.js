@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 //import Placeholder from "./img/placeholder.jpg";
 import Binny from "./img/binnyVersion1.png";
+import TuniLogo from "./img/tuni-logo-valkea.png";
 import { Link } from "react-router-dom";
 import "./App.css";
 
@@ -27,37 +28,38 @@ function IdentifyWaste() {
       .catch((error) => {
         console.error("Error fetching waste image:", error);
       });
-    fetch(`https://waste-management-qlgq.onrender.com/api/sortable/filter?sortable.name=${wasteName}`)
+    fetch(
+      `https://waste-management-qlgq.onrender.com/api/sortable/filter?sortable.name=${wasteName}`
+    )
       .then((response) => response.json())
       .then((data) => {
         const wasteData = data.find((item) => item.name === wasteName);
 
         if (wasteData) {
           setBinColor(wasteData.bin_color);
-          setBinType(wasteData.type)
-
+          setBinType(wasteData.type);
 
           switch (wasteData.bin_color) {
             case "Black/Brown":
-              document.getElementById("binText").style.color= "brown"
+              document.getElementById("binText").style.color = "brown";
               break;
             case "Green":
-              document.getElementById("binText").style.color= "green"
+              document.getElementById("binText").style.color = "green";
               break;
             case "Large green bin with green label":
-              document.getElementById("binText").style.color= "black"
+              document.getElementById("binText").style.color = "black";
               break;
             case "Large green bin with white label":
-              document.getElementById("binText").style.color= "orange"
+              document.getElementById("binText").style.color = "blue";
               break;
             case "Red":
-              document.getElementById("binText").style.color= "red"
+              document.getElementById("binText").style.color = "red";
               break;
             case "Yellow":
-              document.getElementById("binText").style.color= "#e6b800"
+              document.getElementById("binText").style.color = "#e6b800";
               break;
             default:
-              document.getElementById("binText").style.color= "black"
+              document.getElementById("binText").style.color = "black";
               break;
           }
         }
@@ -75,6 +77,7 @@ function IdentifyWaste() {
     });
     return btoa(base64);
   }
+
   return (
     <div className="App">
       <div className="wasteInfo">
@@ -84,23 +87,28 @@ function IdentifyWaste() {
           alt={`Waste example of ${wasteName}`}
           className="IdentifyWasteImage"
         />
-      </div>
-      <br />
 
-      <div className="circular-sb-identify">
-        <p>
-          It goes in the <span className="binType">{binType}</span> (<span id="binText">{binColor}</span>).
-          Let’s see where the bin is!
-        </p>
+        <div className="circular-sb-identify">
+          <p>
+            It goes in the <span className="binType">{binType}</span> (
+            <span id="binText">{binColor} bin</span>). Let’s see where the bin
+            is!
+          </p>
+        </div>
+        <div className="ButtonContainer">
+          <Link to="/askBinny">
+            <button className="No-button">No &#10060;</button>
+          </Link>
+          <img src={Binny} alt="trash can" className="identifyWaste-binny" />
+          <Link to="/map">
+            <button className="Yes-button">Yes &#9989;</button>
+          </Link>
+        </div>
       </div>
-      <img src={Binny} alt="trash can" className="identifyWaste-binny" />
-      <Link to="/map">
-        <button className="Yes-button">Yes &#9989;</button>
-      </Link>
-      <Link to="/askBinny">
-        <button className="No-button">No &#10060;</button>
-      </Link>
-      <div className="footer">Available in TAMK C-building</div>
+      <div className="footer">
+        <img src={TuniLogo} alt="Tuni logo" className="TuniLogo" />
+        <p>Available in TAMK C-building</p>
+      </div>
     </div>
   );
 }

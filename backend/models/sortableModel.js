@@ -32,6 +32,24 @@ const sortable = {
         }
       );
     }),
+
+  findMap: (search) =>
+    new Promise((resolve, reject) => {
+      const sqlQuery = "SELECT map_image FROM map WHERE ?? = ?";
+      connection.query(
+        sqlQuery,
+        [search.column, search.value],
+        (err, result) => {
+          if (err) {
+            console.error("Error executing SQL query:", err);
+            reject(err);
+          } else {
+            console.log("Query result:", result);
+            resolve(result);
+          }
+        }
+      );
+    }),
 };
 
 module.exports = sortable;
