@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import RedBinny from "./img/Red_Binny.png";
 import BlackBinny from "./img/Black_Binny.png";
 import GreenBinny from "./img/Green_Binny.png";
@@ -9,10 +10,35 @@ import { MapInteractionCSS } from "react-map-interaction";
 import TuniLogo from "./img/tuni-logo-valkea.png";
 import "./App.css";
 
+
+function ThankyouPopUp() {
+  const navigate = useNavigate();
+  function GoHome() {
+    navigate('/askBinny', { replace: true });
+  }
+  // window.setTimeout(function () {
+  //   // Move to a new location
+  //   GoHome()
+  // }, 1300);
+
+
+  return (
+    <div className="popUp_card">
+      <div className="popup-box">
+        <div className="box">
+          <h2>Thank you for sorting your waste correctly!</h2>
+          <button onClick={GoHome}>Return home</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Map() {
   const [mapImage, setMapImage] = useState([]);
   const [floorName, setFloornName] = useState("C1");
   const [mapName, setMapName] = useState("C1_all");
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     fetch(
       `https://waste-management-qlgq.onrender.com/api/sortable/map?map.map_name=${mapName}`
@@ -36,6 +62,7 @@ function Map() {
     });
     return btoa(base64);
   }
+
   function setFloor(e) {
     const buttonValue = e.target.value;
     switch (buttonValue) {
@@ -134,6 +161,9 @@ function Map() {
         setMapName("C1_all");
         break;
     }
+  }
+  const togglePopUp = (e) => {
+    setIsOpen(!isOpen);
   }
   return (
     <div className="App">
@@ -258,12 +288,16 @@ function Map() {
             </p>
           </button>
         </div>
-        <button className="DoneButton">Done! &#9989;</button>
+        <button className="DoneButton" onClick={() => togglePopUp()}>Done! &#9989;</button>
       </div>
+      {isOpen && (
+        <ThankyouPopUp />
+      )}
       <div className="footer">
         <img src={TuniLogo} alt="Tuni logo" className="TuniLogo" />
         <p>Available in TAMK C-building</p>
       </div>
+
     </div>
   );
 }

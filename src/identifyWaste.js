@@ -38,7 +38,7 @@ function IdentifyWaste() {
         if (wasteData) {
           setBinColor(wasteData.bin_color);
           setBinType(wasteData.type);
-
+ // add if sentence to add coffee lid types
           switch (wasteData.bin_color) {
             case "Black/Brown":
               document.getElementById("binText").style.color = "brown";
