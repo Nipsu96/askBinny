@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/askBinny/static/css/main.410cc64c.css",
-    "main.js": "/askBinny/static/js/main.61e7c432.js",
+    "main.css": "/askBinny/static/css/main.86ee28c0.css",
+    "main.js": "/askBinny/static/js/main.79661932.js",
     "static/js/787.a57d840c.chunk.js": "/askBinny/static/js/787.a57d840c.chunk.js",
+    "static/media/confusedBinny.png": "/askBinny/static/media/confusedBinny.16ffcacdf7d70fdfc339.png",
     "static/media/Ask_Binny_Logo.png": "/askBinny/static/media/Ask_Binny_Logo.c88ef59cb151a7c89b40.png",
     "static/media/binnyVersion1.png": "/askBinny/static/media/binnyVersion1.cf30086cd1b1223a5a9f.png",
+    "static/media/ios_instructions.png": "/askBinny/static/media/ios_instructions.077df5aeee45336d37e6.png",
+    "static/media/android_instructions.png": "/askBinny/static/media/android_instructions.eb882959809cec2de494.png",
     "static/media/Red_Binny.png": "/askBinny/static/media/Red_Binny.16a21381aa569a79780e.png",
     "static/media/Green_Binny.png": "/askBinny/static/media/Green_Binny.6003e448229664975f22.png",
     "static/media/Yelllow_Binny.png": "/askBinny/static/media/Yelllow_Binny.0106b408fe1bfe505fed.png",
@@ -13,12 +16,12 @@
     "static/media/Black_Binny.png": "/askBinny/static/media/Black_Binny.530ea54775c44a0bfd15.png",
     "static/media/tuni-logo-valkea.png": "/askBinny/static/media/tuni-logo-valkea.743fb5b5d6c211f4b5fe.png",
     "index.html": "/askBinny/index.html",
-    "main.410cc64c.css.map": "/askBinny/static/css/main.410cc64c.css.map",
-    "main.61e7c432.js.map": "/askBinny/static/js/main.61e7c432.js.map",
+    "main.86ee28c0.css.map": "/askBinny/static/css/main.86ee28c0.css.map",
+    "main.79661932.js.map": "/askBinny/static/js/main.79661932.js.map",
     "787.a57d840c.chunk.js.map": "/askBinny/static/js/787.a57d840c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.410cc64c.css",
-    "static/js/main.61e7c432.js"
+    "static/css/main.86ee28c0.css",
+    "static/js/main.79661932.js"
   ]
 }
