@@ -1,33 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 import RedBinny from "./img/Red_Binny.png";
 import BlackBinny from "./img/Black_Binny.png";
 import GreenBinny from "./img/Green_Binny.png";
 import DarkGreenBinny from "./img/DarkGreen_Binny.png";
 import DarkBlueBinny from "./img/DarkBlue_Binny.png";
 import YellowBinny from "./img/Yelllow_Binny.png";
+import ConfusedBinny from "./img/confusedBinny.png";
+import HappyBinny from "./img/Binny_celebrates.png"
 import { MapInteractionCSS } from "react-map-interaction";
 import TuniLogo from "./img/tuni-logo-valkea.png";
 import "./App.css";
 
-
 function ThankyouPopUp() {
   const navigate = useNavigate();
   function GoHome() {
-    navigate('/askBinny', { replace: true });
+    navigate("/askBinny", { replace: true });
   }
-  // window.setTimeout(function () {
-  //   // Move to a new location
-  //   GoHome()
-  // }, 1300);
-
+  window.setTimeout(function () {
+    // Move to a new location
+    GoHome();
+  }, 2700);
 
   return (
     <div className="popUp_card">
       <div className="popup-box">
         <div className="box">
           <h2>Thank you for sorting your waste correctly!</h2>
-          <button onClick={GoHome}>Return home</button>
+          <div className="pop-upContent">
+            <img src={HappyBinny} alt="Happy Binny" />
+            <br />
+            <br />
+            <button className="goHome" onClick={GoHome}>
+              Return home
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -36,7 +45,7 @@ function ThankyouPopUp() {
 
 function Map() {
   const [mapImage, setMapImage] = useState([]);
-  const [floorName, setFloornName] = useState("C1");
+  const [floorName, setFloorName] = useState("C1");
   const [mapName, setMapName] = useState("C1_all");
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
@@ -67,19 +76,19 @@ function Map() {
     const buttonValue = e.target.value;
     switch (buttonValue) {
       case "1st":
-        setFloornName("C1");
+        setFloorName("C1");
         setMapName("C1_all");
         break;
       case "2nd":
-        setFloornName("C2");
+        setFloorName("C2");
         setMapName("C2_all");
         break;
       case "3rd":
-        setFloornName("C3");
+        setFloorName("C3");
         setMapName("C3_all");
         break;
       case "4th":
-        setFloornName("C4");
+        setFloorName("C4");
         setMapName("C4_all");
         break;
       default:
@@ -164,7 +173,7 @@ function Map() {
   }
   const togglePopUp = (e) => {
     setIsOpen(!isOpen);
-  }
+  };
   return (
     <div className="App">
       <div className="MapPageContent">
@@ -243,17 +252,66 @@ function Map() {
               Plastic packaging
             </p>
           </button>
-          <button className="BinType" onClick={() => setName("Dark Green")}>
-            <img
-              src={DarkGreenBinny}
-              alt="Bin icon"
-              className="BinTypeIcon"
-              value="Dark Green"
-            />
-            <p className="BinTypeText" value="Dark Green">
-              Cardboard
-            </p>
-          </button>
+          {(floorName === "C1" || floorName === "C3" || floorName === "C4") && (
+            <Popup
+              modal
+              nested
+              contentStyle={{
+                backgroundColor: "#f5f7fe",
+                border: "2px solid #e1e4ee",
+                textAlign: "center",
+              }}
+              trigger={
+                <button
+                  className="BinType"
+                  onClick={() => setName("Dark Green")}
+                >
+                  <img
+                    src={DarkGreenBinny}
+                    alt="Bin icon"
+                    className="BinTypeIcon"
+                    value="Dark Green"
+                  />
+                  <p className="BinTypeText" value="Dark Green">
+                    Cardboard
+                  </p>
+                </button>
+              }
+            >
+              {(close) => (
+                <div className="modal">
+                  <div>
+                    <img src={ConfusedBinny} alt="Confused Binny" />
+                    <p>
+                      Unfortunately, this bin type is not available in current
+                      floor.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      close();
+                    }}
+                    className="closeButton"
+                  >
+                    Close
+                  </button>
+                </div>
+              )}
+            </Popup>
+          )}
+          {floorName === "C2" && (
+            <button className="BinType" onClick={() => setName("Dark Green")}>
+              <img
+                src={DarkGreenBinny}
+                alt="Bin icon"
+                className="BinTypeIcon"
+                value="Dark Green"
+              />
+              <p className="BinTypeText" value="Dark Green">
+                Cardboard
+              </p>
+            </button>
+          )}
           <button className="BinType" onClick={() => setName("Green")}>
             <img
               src={GreenBinny}
@@ -276,28 +334,76 @@ function Map() {
               Compostable waste
             </p>
           </button>
-          <button className="BinType" onClick={() => setName("Dark Blue")}>
-            <img
-              src={DarkBlueBinny}
-              alt="Bin icon"
-              className="BinTypeIcon"
-              value="Dark Blue"
-            />
-            <p className="BinTypeText" value="Dark Blue">
-              Paper
-            </p>
-          </button>
+          {(floorName === "C1" || floorName === "C3" || floorName === "C4") && (
+            <Popup
+              modal
+              nested
+              contentStyle={{
+                backgroundColor: "#f5f7fe",
+                border: "2px solid #e1e4ee",
+                textAlign: "center",
+              }}
+              trigger={
+                <button
+                  className="BinType"
+                  onClick={() => setName("Dark Blue")}
+                >
+                  <img
+                    src={DarkBlueBinny}
+                    alt="Bin icon"
+                    className="BinTypeIcon"
+                    value="Dark Blue"
+                  />
+                  <p className="BinTypeText" value="Dark Blue">
+                    Paper
+                  </p>
+                </button>
+              }
+            >
+              {(close) => (
+                <div className="modal">
+                  <div>
+                    <img src={ConfusedBinny} alt="Confused Binny" />
+                    <p>
+                      Unfortunately, this bin type is not available in current
+                      floor.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      close();
+                    }}
+                    className="closeButton"
+                  >
+                    Close
+                  </button>
+                </div>
+              )}
+            </Popup>
+          )}
+          {floorName === "C2" && (
+            <button className="BinType" onClick={() => setName("Dark Blue")}>
+              <img
+                src={DarkBlueBinny}
+                alt="Bin icon"
+                className="BinTypeIcon"
+                value="Dark Blue"
+              />
+              <p className="BinTypeText" value="Dark Blue">
+                Paper
+              </p>
+            </button>
+          )}
         </div>
-        <button className="DoneButton" onClick={() => togglePopUp()}>Done! &#9989;</button>
+        <button className="DoneButton" onClick={() => togglePopUp()}>
+          Done! &#9989;
+        </button>
       </div>
-      {isOpen && (
-        <ThankyouPopUp />
-      )}
+      {isOpen && <ThankyouPopUp />}
       <div className="footer">
         <img src={TuniLogo} alt="Tuni logo" className="TuniLogo" />
         <p>Available in TAMK C-building</p>
       </div>
-
     </div>
   );
 }

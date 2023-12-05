@@ -20,8 +20,9 @@ img {
 }
 
 .App-header {
-  padding: 6%;
+  padding: 2vh;
   background-color: #4e008e;
+  position: relative;
 }
 
 .logo {
@@ -38,7 +39,7 @@ img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: 12%;
+  /*margin-left: 12%;*/
   margin-right: auto;
   align-items: center;
   /*max-height: 58vh;*/
@@ -48,7 +49,7 @@ img {
 
 .sortButton {
   font-size: 14px;
-  padding: 5px;
+  padding: 0px 5px;
   background-color: #f5f7fe;
   border: 1.5px solid #e1e4ee;
   border-radius: 5px;
@@ -57,12 +58,25 @@ img {
   margin-bottom: 1vh;
 }
 
+.sortButton p {
+  margin: 6px;
+  color: black;
+}
+
 .wasteButton {
   border: none;
   cursor: pointer;
   appearance: none;
   background-color: inherit;
-  text-wrap: nowrap;
+  text-wrap: wrap;
+  color: black;
+}
+
+.waste {
+  margin: 5px;
+  width: 40%;
+  text-align: center;
+  flex: 1 calc(50% - 20px);
 }
 
 /*Identify waste page*/
@@ -130,6 +144,7 @@ h3 {
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 5px gray;
+  color: black;
 }
 
 .No-button {
@@ -140,18 +155,13 @@ h3 {
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 5px gray;
+  color: black;
 }
 
 .Map {
   float: right;
   margin-right: 12vw;
   margin-top: 9vh;
-}
-
-.waste {
-  margin: 5px;
-  width: 40%;
-  text-align: center;
 }
 
 /*Map page*/
@@ -175,10 +185,12 @@ h2 {
   font-size: 24px;
   padding: 7px 17px;
   margin: 1.5%;
+  color: black;
 }
 
 .FloorButton:focus {
   background-color: #9f6fdf;
+  color: black;
 }
 
 .MapImageContainer {
@@ -227,6 +239,17 @@ h2 {
   font-size: small;
 }
 
+.closeButton {
+  background-color: #e1e4ee;
+  border: none;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgb(189, 189, 189);
+  padding: 5px 7px;
+  cursor: pointer;
+  color: black;
+}
+
 .DoneButton {
   margin-top: 3vh;
   margin-left: 60%;
@@ -236,10 +259,127 @@ h2 {
   box-shadow: 2px 2px 5px gray;
   font-size: 24px;
   padding: 10px 15px;
+  color: black;
 }
 
-/*
-Hamburger menu */
+/*Information page*/
+.infoPageContent {
+  margin: 3%;
+  text-align: center;
+}
+
+.question {
+  font-weight: bold;
+}
+
+.about {
+  position: relative;
+  display: block;
+  background-color: #e1ccff;
+  padding: 10px;
+  margin: 10px;
+  max-width: 100%;
+}
+
+.aboutContent {
+  display: none;
+}
+.about:hover .aboutContent {
+  display: block;
+  padding: 10px;
+}
+.aboutContent::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.aboutContent .infopage-binny {
+  float: left;
+  max-height: 40%;
+}
+
+.icon {
+  position: relative;
+  display: block;
+  align-items: center;
+  background-color: #e1ccff;
+  padding: 10px;
+  margin: 10px;
+  max-width: 100%;
+}
+.iconContent {
+  display: none;
+}
+.icon:hover .iconContent {
+  display: block;
+  padding: 10px;
+}
+.iconContent::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tutorial {
+  max-width: 635px;
+}
+.binnyLink {
+  background-color: #4e008e;
+  padding: 5px;
+}
+
+.faq {
+  position: relative;
+  display: block;
+  align-items: center;
+  background-color: #e1ccff;
+  padding: 10px;
+  margin: 10px;
+  max-width: 100%;
+}
+.faqContent {
+  display: none;
+}
+.faq:hover .faqContent {
+  display: block;
+  padding: 10px;
+}
+.faqContent::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.socialMediaAndLinks {
+  position: relative;
+  display: block;
+  align-items: center;
+  background-color: #e1ccff;
+  padding: 10px;
+  margin: 10px;
+  max-width: 100%;
+}
+.socialContent {
+  display: none;
+}
+.socialMediaAndLinks:hover .socialContent {
+  display: block;
+  padding: 10px;
+}
+.socialContent::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.pop-upContent{
+  margin-left: 27%;
+  margin-right: 27%;
+}
+
+li{
+  margin:-3px
+}
+
+/*Hamburger menu */
 .option a:hover {
   /*background-color: #cce6ff;*/
   /*border-radius: 10px;*/
@@ -281,6 +421,7 @@ Hamburger menu */
   padding: 1px;
   transition: all 0.5s ease;
   background-color: #4e008e;
+  box-shadow: 2px 2px 5px gray;
 }
 
 .mobile-menu {
@@ -291,8 +432,8 @@ Hamburger menu */
 
 .menu-icon {
   color: #ffffff;
-  position: absolute;
-  top: 15%;
+  position: relative;
+  top: 0.5vh;
   left: 7%;
   z-index: 6;
   width: 45px;
@@ -301,6 +442,10 @@ Hamburger menu */
 
 a {
   color: #ffffff;
+}
+
+a:visited {
+  color: white;
 }
 
 /*Footer*/
@@ -326,13 +471,13 @@ a {
   padding-bottom: 0.5vh;
 }
 
- /*Popup*/
- .popUp_card{
+/*Popup*/
+.popUp_card {
   margin-top: 20px;
   border: 1px solid white;
-  }
+}
 
-  .popup-box{
+.popup-box {
   position: fixed;
   background: #00000050;
   width: 100%;
@@ -340,7 +485,7 @@ a {
   top: 0;
   z-index: 4;
   left: 0;
-  }
+}
 
 .box {
   position: relative;
@@ -349,13 +494,25 @@ a {
   height: auto;
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
-  border-radius: 8px;
   padding: 20px;
-  border: 1px solid #999;
+  background-color: #f5f7fe;
+  border: 2px solid #e1e4ee;
+  text-align: "center";
   overflow: auto;
 }
-.popUp_title{
+
+.popUp_title {
+  color: black;
+}
+
+.goHome {
+  background-color: #e1e4ee;
+  border: none;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgb(189, 189, 189);
+  padding: 5px 7px;
+  cursor: pointer;
   color: black;
 }
 
@@ -379,6 +536,13 @@ a {
   .sortButton {
     margin-top: 1vh;
     margin-bottom: 3vh;
+    padding: 2px 6px;
+  }
+
+  .sortButton p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: black;
   }
 
   h4 {
@@ -422,12 +586,14 @@ a {
 
   .No-button {
     margin-right: 5vw;
+    color: black;
   }
 
   /*Map page*/
   .FloorButton {
     padding: 10px 20px;
     margin: 0vh 0.5vw;
+    color: black;
   }
 
   .MapImageContainer {
@@ -462,6 +628,7 @@ a {
     position: absolute;
     top: 135vh;
     right: 5vw;
+    color: black;
   }
 
   /*Hamburger menu*/
@@ -524,6 +691,4 @@ a {
     width: 30vw;
     height: auto;
   }
-
-
 }

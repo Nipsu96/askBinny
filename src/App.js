@@ -11,6 +11,7 @@ import "./App.css";
 
 function Home() {
   const [wasteList, setWasteList] = useState([]);
+  const [sortType, setSortType] = useState("a-z");
 
   useEffect(() => {
     fetch(`https://waste-management-qlgq.onrender.com/api/sortable`)
@@ -39,11 +40,21 @@ function Home() {
     return btoa(base64);
   }
   function sortWaste() {
-    setWasteList((wasteArray) =>
-      [...wasteArray].sort((a, b) =>
-        a.name > b.name ? 1 : b.name > a.name ? -1 : 0
-      )
-    );
+    if (sortType === "a-z") {
+      setWasteList((wasteArray) =>
+        [...wasteArray].sort((a, b) =>
+          a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+        )
+      );
+      setSortType("z-a");
+    } else {
+      setWasteList((wasteArray) =>
+        [...wasteArray].sort((a, b) =>
+          a.name < b.name ? 1 : b.name < a.name ? -1 : 0
+        )
+      );
+      setSortType("a-z");
+    }
   }
 
   return (
@@ -52,7 +63,7 @@ function Home() {
       <div className="content">
         <h4>What are you recycling?</h4>
         <button className="sortButton" onClick={() => sortWaste()}>
-          Sort alphabetically
+          {sortType === "a-z" ? <p>Sort from A-Z</p> : <p>Sort from Z-A</p>}
         </button>
         <div className="wastelisting">
           {wasteList.map((waste, index) => (

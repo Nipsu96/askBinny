@@ -34,32 +34,35 @@ function IdentifyWaste() {
       .then((response) => response.json())
       .then((data) => {
         const wasteData = data.find((item) => item.name === wasteName);
-
         if (wasteData) {
           setBinColor(wasteData.bin_color);
           setBinType(wasteData.type);
- // add if sentence to add coffee lid types
+          if (wasteData.type === "if plastic = plastic, if cardboard = cardboard, if dirty = solid") {
+
+            document.getElementById("binText").innerHTML = "<li>if the lid is plastic => plastic (<p style='color:#e6b800;'>Yellow Bin</p>)</li> <li>if it's cardboard => cardboard (<p style='color:#004d00;'>Dark Green Bin</p>) </li> <li>if it's too dirty => solid waste (<p style='color:green;'>Green Bin</p>)</li><br/>"
+          }
+          // add if sentence to add coffee lid types
           switch (wasteData.bin_color) {
             case "Black/Brown":
-              document.getElementById("binText").style.color = "brown";
+              document.getElementById("binColor").style.color = "brown";
               break;
             case "Green":
-              document.getElementById("binText").style.color = "green";
+              document.getElementById("binColor").style.color = "green";
               break;
             case "Large green bin with green label":
-              document.getElementById("binText").style.color = "black";
+              document.getElementById("binColor").style.color = "black";
               break;
             case "Large green bin with white label":
-              document.getElementById("binText").style.color = "blue";
+              document.getElementById("binColor").style.color = "blue";
               break;
             case "Red":
-              document.getElementById("binText").style.color = "red";
+              document.getElementById("binColor").style.color = "red";
               break;
             case "Yellow":
-              document.getElementById("binText").style.color = "#e6b800";
+              document.getElementById("binColor").style.color = "#e6b800";
               break;
             default:
-              document.getElementById("binText").style.color = "black";
+              document.getElementById("binColor").style.color = "black";
               break;
           }
         }
@@ -90,9 +93,11 @@ function IdentifyWaste() {
 
         <div className="circular-sb-identify">
           <p>
-            It goes in the <span className="binType">{binType}</span> (
-            <span id="binText">{binColor} bin</span>). Let’s see where the bin
+            <span id="binText">
+              It goes in the <span className="binType">{binType}</span>  (
+              <span id="binColor">{binColor} bin</span>). </span>Let’s see where the bin
             is!
+
           </p>
         </div>
         <div className="ButtonContainer">
